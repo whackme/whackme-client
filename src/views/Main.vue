@@ -1,20 +1,19 @@
 <template>
-<div>
-  <div class="navbar">
+  <div>
     <Navbar></Navbar>
+    <Play></Play>
   </div>
-  <div class="home">
-    <h1>Play</h1>
-  </div>
-</div>
 </template>
 
 <script>
+import Play from '../views/Play'
 import Navbar from '../components/Navbar'
 export default {
-  name: 'Play',
-  components: {
-    Navbar
-  }
+  name: 'Main',
+  components: Play
 }
 </script>
+
+<style>
+
+</style>
