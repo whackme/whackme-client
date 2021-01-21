@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     logindata: {
-      username: ''
+      username: '',
+      player: [],
+      score: 0
     }
   },
   mutations: {
