@@ -34,6 +34,9 @@ export default {
     changePosition () {
       this.$socket.emit('changePosition')
     }
+  },
+  created () {
+    this.changePosition()
   }
 }
 </script>
