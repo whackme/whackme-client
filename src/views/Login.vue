@@ -1,8 +1,8 @@
 <template>
   <div>
-    <form action="">
+    <form @submit.prevent="login">
       <label for="">Name</label><br>
-      <input type="text" placeholder="input your name here"><br><br>
+      <input v-model="logindata.username" type="text" placeholder="input your name here"><br><br>
       <div>
         <button class="btn btn-primary" type="submit">Play</button>
       </div>
@@ -16,14 +16,16 @@ export default {
   name: 'Login',
   methods: {
     login () {
-      localStorage.setItem('username', this.username)
-      this.$router.push('/rooms')
-      // socket.emit('login', this.username)
-      this.username = ''
+      this.$store.commit('addUser', this.logindata.username)
+      localStorage.setItem('username', this.logindata.username)
+      this.$router.push('/play')
+      console.log(this.logindata.username)
+      this.logindata.username = ''
     }
   },
   computed: {
     ...mapState([
+      'logindata'
     ])
   }
 }
