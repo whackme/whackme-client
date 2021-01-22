@@ -20,6 +20,7 @@
 
 import BlockGame from '@/components/BlockGame.vue'
 import ScoreBoard from '../components/ScoreBoard'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Play',
@@ -39,7 +40,10 @@ export default {
       } else {
         return false
       }
-    }
+    },
+    ...mapState({
+      isStarted: 'isStarted'
+    })
   }
 }
 </script>
