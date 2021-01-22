@@ -9,8 +9,10 @@ export default new Vuex.Store({
     logindata: {
       username: ''
     },
-    playerLoggedIn: []
+    playerLoggedIn: [],
+    count: 0
   },
+
   mutations: {
     addUser (state, payload) {
       state.username = payload
@@ -30,17 +32,23 @@ export default new Vuex.Store({
     MUTATE_updateSum (state) {
       // state.playerLoggedIn.sum = 2
       localStorage.setItem('totalLoginPlayer', JSON.stringify(state.playerLoggedIn))
+    },
+    increment (state) {
+      state.count++
     }
   },
   actions: {
+    increasePoint (context) {
+      context.commit('increment')
+    },
     ACTION_logoutAllUser () {
-      localStorage.clear() 
+      localStorage.clear()
       router.push('/')
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'One of the player has been logout',
-      }) 
+        text: 'One of the player has been logout'
+      })
     }
   }
 })
