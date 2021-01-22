@@ -17,10 +17,12 @@ export default {
   methods: {
     logout () {
       localStorage.clear()
+      this.$socket.emit('logout')
       this.$router.push('/')
     }
   }
 }
+
 </script>
 
 <style scoped>
