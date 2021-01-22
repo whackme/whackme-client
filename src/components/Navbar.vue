@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-            <a href="" class="nav-link" @click.prevent="logout">logout</a>
+            <button class="btn btn-outline-danger"><a href="" class="nav-link" @click.prevent="logout">logout</a></button>
       </div>
     </nav>
   </div>
@@ -17,10 +17,12 @@ export default {
   methods: {
     logout () {
       localStorage.clear()
+      this.$socket.emit('logout')
       this.$router.push('/')
     }
   }
 }
+
 </script>
 
 <style>

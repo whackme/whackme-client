@@ -1,9 +1,9 @@
 <template>
 <div>
   <div class="navbar">
-    <a @click="logout" href="">Exit</a>
-      <button @click="startGame">Start Game</button>
-    <Navbar></Navbar>
+    <!-- <a @click="logout" href="">Exit</a> -->
+      <button class="btn btn-success" @click="startGame">Start Game</button>
+    <!-- <Navbar></Navbar> -->
   </div>
   <div class="home">
     <h1>Play</h1>

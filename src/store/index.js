@@ -33,5 +33,14 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    ACTION_logoutAllUser () {
+      localStorage.clear() 
+      router.push('/')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'One of the player has been logout',
+      }) 
+    }
   }
 })
