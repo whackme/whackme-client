@@ -1,13 +1,17 @@
 <template>
 <div>
-  <div class="navbar">
-    <a @click="logout" href="">Exit</a>
-      <button @click="startGame">Start Game</button>
-    <Navbar></Navbar>
+  <div class="container d-flex justify-content-center">
+    <button class="btn btn-success" id="startgame" @click="startGame">Start Game</button>
   </div>
-  <div class="home">
-    <h1>Play</h1>
-    <BlockGame/>
+  <div class="container">
+      <div class="d-flex mainfeature">
+        <div id="scoreboard">
+          <ScoreBoard></ScoreBoard>
+        </div>
+        <div id="blockgame">
+          <BlockGame/>
+        </div>
+      </div>
   </div>
 </div>
 </template>
@@ -15,19 +19,15 @@
 <script>
 
 import BlockGame from '@/components/BlockGame.vue'
-import Navbar from '../components/Navbar'
+import ScoreBoard from '../components/ScoreBoard'
 
 export default {
   name: 'Play',
   components: {
-    Navbar,
-    BlockGame
+    BlockGame,
+    ScoreBoard
   },
   methods: {
-    logout () {
-      localStorage.clear()
-      this.$router.push('/')
-    },
     startGame () {
       this.$socket.emit('startGame')
     }
@@ -43,3 +43,15 @@ export default {
   }
 }
 </script>
+<style scoped>
+.btn-success {
+  margin: 50px 0;
+}
+.mainfeature {
+  flex-flow: row;
+  justify-content: space-around;
+}
+#startgame {
+  justify-content: center;
+}
+</style>
