@@ -16,16 +16,20 @@ export default {
   name: 'Login',
   methods: {
     login () {
-      this.$store.commit('addUser', this.logindata.username)
-      localStorage.setItem('username', this.logindata.username)
-      this.$router.push('/play')
-      console.log(this.logindata.username)
-      this.logindata.username = ''
+      // this.$store.commit('addUser', this.logindata.username)
+
+      // localStorage.setItem('username', this.logindata.username)
+      // this.$router.push('/play')
+      // console.log(this.logindata.username)
+      // this.logindata.username = ''
+
+      this.$socket.emit('insertUser', this.logindata.username)
     }
   },
   computed: {
     ...mapState([
-      'logindata'
+      'logindata',
+      'playerLoggedIn'
     ])
   }
 }

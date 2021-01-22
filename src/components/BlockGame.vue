@@ -1,10 +1,9 @@
 <template>
   <div class="container">
     <div class="row d-flex justify-content-center" id="box">
-      <Row v-for="(item, idxRow) in row"
-        :key="idxRow"
-        :idxRow="idxRow"/>
-
+        <Row v-for="(item, idxRow) in row"
+          :key="idxRow"
+          :idxRow="idxRow"/>
     </div>
     <!-- <canvas
       id="blockGame"

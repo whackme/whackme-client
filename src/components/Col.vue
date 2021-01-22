@@ -3,7 +3,7 @@
     <div
       v-if="coordinat.x === positionSpider.x && coordinat.y === positionSpider.y"
       class="justify-content-center d-flex mt-2">
-      <button @click="changePosition" class="btn btn-danger"><i class="fas fa-spider"></i></button>
+      <button @click="changePosition" class="btn justify-content-center"><i id="spider" class="fas fa-spider"></i></button>
     </div>
   </div>
 </template>
@@ -34,10 +34,10 @@ export default {
     changePosition () {
       this.$socket.emit('changePosition')
     }
-  },
-  created () {
-    this.changePosition()
   }
+  // created () {
+  //   this.changePosition()
+  // }
 }
 </script>
 
@@ -45,5 +45,11 @@ export default {
   .col {
     border-radius: 20%;
     object-fit: cover;
+  }
+  #spider {
+    min-width: 30px;
+    min-height: 30px;
+    font-size: 40px;
+    color: black;
   }
 </style>
