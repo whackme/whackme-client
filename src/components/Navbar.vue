@@ -5,7 +5,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-            <a href="" class="nav-link" @click.prevent="logout">logout</a>
+            <button class="btn btn-outline-danger"><a href="" class="nav-link" @click.prevent="logout">logout</a></button>
       </div>
     </nav>
   </div>
