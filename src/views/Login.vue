@@ -5,7 +5,7 @@
     <div class="row">
     <div class="col-sm">
     </div>
-    <div class="col-sm form-group">
+    <div class="col-sm form-group shadow p-3 mb-5 bg-white rounded">
       <form @submit.prevent="login">
       <label for="">Name</label><br>
       <input class="form-control" v-model="logindata.username" type="text" placeholder="input your name here"><br><br>
