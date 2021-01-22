@@ -10,7 +10,10 @@ import Play from '../views/Play'
 import Navbar from '../components/Navbar'
 export default {
   name: 'Main',
-  components: Play
+  components: {
+    Navbar,
+    Play
+  }
 }
 </script>
 

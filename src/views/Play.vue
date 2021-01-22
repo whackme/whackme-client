@@ -20,7 +20,8 @@ import Navbar from '../components/Navbar'
 export default {
   name: 'Play',
   components: {
-    Navbar
+    Navbar,
+    BlockGame
   },
   methods: {
     logout () {
@@ -30,9 +31,6 @@ export default {
     startGame () {
       this.$socket.emit('startGame')
     }
-  },
-  components: {
-    BlockGame
   },
   computed: {
     totalLoginPlayer () {
