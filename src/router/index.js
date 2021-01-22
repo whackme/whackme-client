@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Main from '../views/Main.vue'
 import Play from '../views/Play.vue'
 import Login from '../views/Login.vue'
 
@@ -12,9 +13,16 @@ const routes = [
     component: Login
   },
   {
-    path: '/play',
-    name: 'Play',
-    component: Play
+    path: '/',
+    name: 'Main',
+    component: Main,
+    children: [
+      {
+        path: '',
+        name: 'Play',
+        component: Play
+      }
+    ]
   }
 ]
 
