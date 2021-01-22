@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app mainbg">
     <router-view/>
   </div>
 </template>
@@ -30,5 +30,10 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+body {
+  background-image: url("https://cdn.hipwallpaper.com/i/3/31/Oi6Nka.png");
+  background-position-y: -800px;
 }
 </style>

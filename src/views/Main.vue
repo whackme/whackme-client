@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="mainbg">
     <Navbar></Navbar>
     <Play></Play>
   </div>

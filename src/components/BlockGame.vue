@@ -35,9 +35,12 @@ export default {
 #box {
   height: 480px;
   width: 640px;
-  border: 1px solid black;
-  border-radius: 5%;
-  margin-left: 20%;
+  border: 15px solid;
+  border-color: rgb(226, 134, 134);
+  border-style:groove;
+  /* border: 1px solid black; */
+  border-radius: 0%;
+  background-color: white;
 }
 .row {
   border-radius: 15%;

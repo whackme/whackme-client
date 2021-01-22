@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-            <button class="btn btn-outline-danger"><a href="" class="nav-link" @click.prevent="logout">logout</a></button>
+  <div class="container">
+      <div class="d-flex nav">
+        <div id="navlogo">
+          <h3>Whack me!</h3>
+        </div>
+        <div id="navbtn">
+          <h3><a @click="logout" href="">Logout</a></h3>
+        </div>
       </div>
-    </nav>
   </div>
 </template>
 
@@ -25,6 +25,20 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+.nav {
+  margin-top: 20px;
+  justify-content: space-between;
+}
 
+#navlogo {
+  color: rgb(65, 65, 65);
+}
+#navbtn {
+  justify-content: end;
+}
+#navbtn h3 a {
+  text-decoration: none;
+  color: inherit;
+}
 </style>
