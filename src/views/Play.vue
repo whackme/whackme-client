@@ -1,6 +1,8 @@
 <template>
 <div>
   <div class="navbar">
+    <a @click="logout" href="">Exit</a>
+      <button @click="startGame">Start Game</button>
     <Navbar></Navbar>
   </div>
   <div class="home">
@@ -24,10 +26,22 @@ export default {
     logout () {
       localStorage.clear()
       this.$router.push('/')
+    },
+    startGame () {
+      this.$socket.emit('startGame')
     }
   },
   components: {
     BlockGame
+  },
+  computed: {
+    totalLoginPlayer () {
+      if (localStorage.totalLoginPlayer) {
+        return JSON.parse(localStorage.totalLoginPlayer)
+      } else {
+        return false
+      }
+    }
   }
 }
 </script>
